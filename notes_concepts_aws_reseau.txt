@@ -1,0 +1,58 @@
+NETWORK VOCABULARY
+
+CIDR : Classless Inter-Domain Routing
+CDN: Content Delivery Network
+INBOUND :
+OUTBOUND :
+EGRESS :
+INGRESS : 
+=========================================
+AWS VOCABULARY
+
+ASG : Auto Scailling Groupe
+ARN : Amazon Ressource Name
+VPC : Virtual Private Cloud
+NACL : Network ACL
+AZ : Availability Zone
+SG : Security Groupe
+IGW : Internet Gateway
+IMDS : Instance Metadata Service
+IAM : Identity and Access Management
+ALB : Application Load Balancer
+HA : High Availability
+Stateless : applications qui ne retient rien en session ses informations
+Statefull : Application qui retient en sessions ses informations
+WAF : Web Application Firewall
+TTL (Time To Live) : combien de temps une réponse mise en cache est stocké dans un edge (s'utilise avec un cloudfront)
+
+AWS RESSOURCES
+
+EC2 (ECC = Amazon Elastic Compute Cloud ) : service de machines virtuelles
+S3 : (bucket) storage de fichier 
+CDN (CloudFront) : place des copies de tes contenus sur des Noeuds Edge partout dans le monde pour que les utilisateurs les téléchargent depuis un point proche
+ACM : Amazon Certificate manager
+VPC : Réseau lié a une région AWS sur lequel on peut crée des sous réseaux, et l'espace addresses
+AMI (Amazon Machine Image) : modèle d'instance qui contient (os / snapshot EBS / Carte des volumes / Métadonnées)
+IMDSv2 : service de métadonnées EC2 avec jeton obligatoire.
+ECS : orchestrateur de conteneur AWS (utilise des instances EC2)
+ECS fargate : orchestrateur de conteneur AWS (Utilise uniquement CPU/RAM, pas d'instance)
+
+=========================================
+OUTIL VOCABULARY
+
+WAF  (Web Application Firewall): protège des DDOS etc
+
+
+=========================================
+POLICY
+
+Origin Request Policy : décide quels headers/cookies/query strings CloudFront transmet à l’origin
+Cache Policy : décide ce qui compose la clé de cache (lié a cloudfront)
+
+=========================================
+Monitoring VOCABULARY
+
+SLI : ce que l'on mesure (ex. taux de 5xx ALB, latence p95)
+SLO : Cible sur la periode (ex. latence p95 ≤ 300 ms, 99,9 % de requêtes OK sur 30 j). 
+Error budget : 1 − SLO. Si SLO 99,9 % → budget ≈ 43,2 min d’indispo/30 j.
+p95 : 95 % des requêtes sont plus rapides que cette valeur (filtre les outliers).
